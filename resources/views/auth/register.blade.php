@@ -36,7 +36,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> 
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
