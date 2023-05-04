@@ -12,13 +12,15 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 
-  
-Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
-Route::get('registration', [AuthController::class, 'registration'])->name('register');
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
-Route::get('dashboard', [AuthController::class, 'dashboard']); 
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('login', 'auth\AuthController@index')->name('login');
+Route::post('post-login', 'auth\AuthController@postLogin')->name('login.post');
+
+Route::get('registration', 'auth\AuthController@registration')->name('register');
+Route::post('post-registration','auth\AuthController@postRegistration')->name('register.post');
+
+Route::get('dashboard', 'auth\AuthController@dashboard'); 
+
+Route::get('logout', 'auth\AuthController@logout')->name('logout');
 
 
 Route::get('/', function () {
